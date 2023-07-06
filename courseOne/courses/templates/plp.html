@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}CourseOne PLP{% endblock %}
+
+{% block body %}
+<h1>Course List</h1>
+
+<!-- Filter bar -->
+<form action="/courses/" method="get">
+  <!-- Type filter field -->
+  <label for="type">Type:</label>
+  <select name="type" id="type">
+      <option value="">All</option>
+      <option value="Premium">Premium</option>
+      <option value="Free">Free</option>
+      <option value="Online">Online</option>
+      <option value="Offline">Offline</option>
+  </select>
+
+  <!-- Price filter fields -->
+  <label for="price_min">Price Range:</label>
+  <input type="number" name="price_min" id="price_min" placeholder="Min Price">
+  <input type="number" name="price_max" id="price_max" placeholder="Max Price">
+
+  <!-- Popularity filter field -->
+  <label for="popularity_min">Popularity:</label>
+  <input type="number" name="popularity_min" id="popularity_min" min="1" max="5" placeholder="Minimum Popularity (1-5)">
+
+  <!-- Topics filter field -->
+  <label for="topics">Topics:</label>
+  <select name="topics" id="topics" multiple>
+      <option value="Science">Science</option>
+      <option value="Database">Database</option>
+      <option value="Networking">Networking</option>
+      <option value="Python">Python</option>
+      <option value="Neurology">Neurology</option>
+      <option value="Biology">Biology</option>
+      <!-- Add more topics as needed -->
+  </select>
+
+  <!-- Hidden field for default filter value -->
+  <input type="hidden" name="default_filter" value="true">
+
+  <!-- Submit button -->
+  <button type="submit">Apply Filters</button>
+</form>
+
+{% for course in courses %}
+  <div>
+    <h2><a href="{% url 'course-detail' course.pk %}">{{ course.title }}</a></h2>
+    <p>{{ course.description }}</p>
+    <p>Course Type: {{ course.course_type }}</p>
+    <p>Price: &#8377;{{ course.price }}</p>
+    <p>Popularity: {{ course.popularity }}</p>
+    <p>Topics: 
+      {% for topic in course.topics.all %}
+        {{ topic.name }}{% if not forloop.last %}, {% endif %}
+      {% empty %}
+        None
+      {% endfor %}
+    </p>
+  </div>
+{% endfor %}
+
+
+{% endblock %}

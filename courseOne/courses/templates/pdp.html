@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}CourseOne PLP{% endblock %}
+
+{% block body %}
+<h1>{{ course.title }}</h1>
+    <p>Description: {{ course.description }}</p>
+
+    <h2>Contents:</h2>
+    {% for content in course.contents.all %}
+        <h3>{{ content.brief }}</h3>
+        <h4>Lectures:</h4>
+        <ul>
+            {% for lecture in content.lectures.all %}
+                <li>{{ lecture.brief }}</li>
+
+                <h5>Videos:</h5>
+                <ul>
+                    {% for video in lecture.videos.all %}
+                        <li>{{ video.title }}</li>
+                        <li>{{ video.url }}</li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
+
+        <h4>Images:</h4>
+        <ul>
+            {% for image in content.images.all %}
+                <li>{{ image.title }}</li>
+                <li>{{ image.url }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+
+{% endblock %}
