@@ -24,7 +24,7 @@ Follow these steps to set up and run the CourseOne project on your local machine
 ### Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/courseone.git
+git clone https://github.com/siddharthverma-1607/courseOne.git
 
 
 2. Change into the project directory:
