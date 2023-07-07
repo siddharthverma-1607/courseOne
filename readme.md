@@ -26,12 +26,7 @@ Follow these steps to set up and run the CourseOne project on your local machine
 ### Installation
 
 1. Clone the repository:
-   <<<<<<< HEAD
-   git clone https://github.com/your-username/courseone.git
-   =======
    git clone https://github.com/siddharthverma-1607/courseOne.git
-
-> > > > > > > 8f760c05ba2f9866383cd30cadb35cef124cdfe9
 
 2. Change into the project directory:
    cd courseone
@@ -100,11 +95,11 @@ Follow these steps to set up and run the CourseOne project on your local machine
 
 ## DEMO: Rest API
 
-[![Video](https://img.youtube.com/vi/1NTy7l3WpY-5JIwLJGHYDKcIdxZS28IKg/0.jpg)](https://www.youtube.com/watch?v=1NTy7l3WpY-5JIwLJGHYDKcIdxZS28IKg)
+[![Watch the video](https://drive.google.com/uc?export=view&id=1NTy7l3WpY-5JIwLJGHYDKcIdxZS28IKg)](https://drive.google.com/file/d/1NTy7l3WpY-5JIwLJGHYDKcIdxZS28IKg/view)
 
 ## DEMO: Razorpay Integration
 
-[![Video](https://img.youtube.com/vi/1B4Fji7FJx-4HtMvijGhF2x1AiTRdVpb9/0.jpg)](https://www.youtube.com/watch?v=1B4Fji7FJx-4HtMvijGhF2x1AiTRdVpb9)
+[![Watch the video](https://drive.google.com/uc?export=view&id=1B4Fji7FJx-4HtMvijGhF2x1AiTRdVpb9)](https://drive.google.com/file/d/1B4Fji7FJx-4HtMvijGhF2x1AiTRdVpb9/view)
 
 ## Contribution
 
