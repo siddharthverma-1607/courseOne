@@ -4,40 +4,46 @@
 
 {% block body %}
 <div id="pdp">
-<h1>{{ course.title }}</h1>
+    <h1>{{ course.title }}</h1>
     <p>Description: {{ course.description }}</p>
 
     <h2>Contents:</h2>
     {% for content in course.contents.all %}
 
-    <!-- <h4>Images:</h4> -->        
-            {% for image in content.images.all %}
-            <div class="image-container">
-                <img src="{{ image.url }}" alt="{{ image.title }}" class="responsive-image">
-              </div>
-              
-            {% endfor %}        
+    <!-- <h4>Images:</h4> -->
+    {% for image in content.images.all %}
 
-        <h3>{{ content.brief }}</h3>
-        <h4>Lectures:</h4>
-        <ul>
-            {% for lecture in content.lectures.all %}
-            {% autoescape off %}
-                {{ lecture.brief }}
-            {% endautoescape %}
-                <h5>Videos:</h5>
-                <ul>
-                    {% for video in lecture.videos.all %}
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="{{ video.url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </div>
-                      
-                    {% endfor %}
-                </ul>
-            {% endfor %}
-        </ul>
+    <div class="image-container">
+        <img src="{{ image.url }}" alt="{{ image.title }}" class="responsive-image">
+    </div>
 
-        
+    {% endfor %}
+
+    <h3>{{ content.brief }}</h3>
+    <h4>Lectures:</h4>
+    <ul>
+        {% for lecture in content.lectures.all %}
+        {% autoescape off %}
+        {{ lecture.brief }}
+        {% endautoescape %}
+        <h5>Videos:</h5>
+
+
+        {% for video in lecture.videos.all %}
+
+        <div class="video-container">
+            <p><a href="{{ video.url }}" target="_blank">Watch in new tab</a></p><br>
+
+
+
+        </div>
+
+        {% endfor %}
+
+        {% endfor %}
+    </ul>
+
+
     {% endfor %}
 </div>
 

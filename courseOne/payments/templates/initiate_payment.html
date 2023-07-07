@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+payment
+{% endblock %}
+
+{% block head %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script> {% endblock %}
+
+{% block body %}
+<!-- Example payment form -->
+<form action="{% url 'initiate_payment' %}" method="post">
+  {% csrf_token %}
+  <!-- Add form fields and other elements as needed -->
+  <input type="number" name="amount" placeholder="Amount">
+  <input type="submit" value="Proceed to Payment">
+</form>
+
+
+<!-- Include Razorpay JavaScript library -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+{% endblock %}

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courseOne',
-    'courses',
+    'courses',  
     'payments'
 ]
 
@@ -139,3 +139,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+# Razor Pay settings
+RAZORPAY_KEY_ID = 'rzp_test_CAolJSOr7wd3Bv'
+RAZORPAY_KEY_SECRET = 'PMFJ79lrYk1qEIAwI1rcGEUG'

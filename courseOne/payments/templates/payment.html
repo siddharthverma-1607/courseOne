@@ -4,16 +4,56 @@
 payment
 {% endblock %}
 
-{% block body %}
-<!-- Example payment form -->
-<form action="{% url 'initiate_payment' %}" method="post">
-    {% csrf_token %}
-    <!-- Add form fields and other elements as needed -->
-    <input type="number" name="amount" placeholder="Amount">
-    <input type="submit" value="Proceed to Payment">
-  </form>
-  
+{% block head %}
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script> {% endblock %}
 
-  <!-- Include Razorpay JavaScript library -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+{% block body %}
+<h1>Payment</h1>
+
+<h3>Order Details:</h3>
+<p>Order ID: {{ order_id }}</p>
+<p>Amount: {{ order_amount }}</p>
+<p>Currency: {{ order_currency }}</p>
+
+<h3>Payment Details:</h3>
+<form id="paymentForm" action="{% url 'payment-success' %}" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="razorpay_payment_id" id="paymentId">
+  <button type="submit">Make Payment</button>
+</form>
+
+<script>
+  var razorpayKey = "{{ razorpay_key_id }}";
+
+  var options = {
+    key: razorpayKey,
+    amount: {{ order_amount }},
+  currency: "{{ order_currency }}",
+    name: "Your Company Name",
+      description: "Course Payment",
+        image: "",
+          order_id: "{{ order_id }}",
+            handler: function(response) {
+              document.getElementById("paymentId").value = response.razorpay_payment_id;
+              document.getElementById("paymentForm").submit();
+            },
+  prefill: {
+    name: "",
+      email: "",
+        contact: ""
+  },
+  notes: {
+    address: ""
+  },
+  theme: {
+    color: "#F37254"
+  }
+        };
+
+  var razorpayCheckout = new Razorpay(options);
+  document.getElementById("paymentForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    razorpayCheckout.open();
+  });
+</script>
 {% endblock %}

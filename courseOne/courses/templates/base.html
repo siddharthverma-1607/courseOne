@@ -1,72 +1,80 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock %}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock %}</title>
+  {% block head %} {% endblock %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <!--- google fonts Link ---->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!--- google fonts Link ---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!---- icon cdn link---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!---- icon cdn link---->
 
-      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-      <!--STYLE SHEET -->
-    <link rel="stylesheet" href="{% static '/css/main.css' %}" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <!--STYLE SHEET -->
+  <link rel="stylesheet" href="{% static '/css/main.css' %}" />
 </head>
+
 <body>
-      
-    <header>
-  
-      <nav>
-        
-        <a href="{% url 'homepage' %}"><img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img.png" class="logo"></a>
-        
-        <ul class="menu-bar-side">
-          <li><a href="{% url 'course-list' %}">everything</a></li>
-          <li><a href="{% url 'course-list' %}?type=Premium">Premium</a></li>
-          <li><a href="{% url 'course-list' %}?type=Free">Free</a></li>            
-        </ul>
-        
-         <ul class="menu-bar">
-          <li>about</li>
-          <li>contect us</li>
-          <li>&#8377;0.00</li>
-          <li><i class='fas fa-shopping-cart'></i></li>
-          <li><i class='fas fa-user-alt'></i></li>
-        </ul>
-        
-        <i class="fa fa-bars"></i>
-      </nav>
-    
-      
-     {% block header %}
-     {% endblock %}
-    
-    </header>
-      
-    {% block body %}
+
+  <header>
+
+    <nav>
+
+      <a href="{% url 'homepage' %}"><img
+          src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img.png"
+          class="logo"></a>
+
+      <ul class="menu-bar-side">
+        <li><a href="{% url 'course-list' %}">everything</a></li>
+        <li><a href="{% url 'course-list' %}?type=Premium">Premium</a></li>
+        <li><a href="{% url 'course-list' %}?type=Free">Free</a></li>
+      </ul>
+
+      <ul class="menu-bar">
+        <li>about</li>
+        <li><a href="{% url 'initiate_payment' %}">Pay Now</a></li>
+        <li>&#8377;0.00</li>
+        <li><i class='fas fa-shopping-cart'></i></li>
+        <li><i class='fas fa-user-alt'></i></li>
+      </ul>
+
+      <i class="fa fa-bars"></i>
+    </nav>
+
+
+    {% block header %}
     {% endblock %}
-      
-      <footer>
-        
-        
-        
-        <div class="footer-info">
-          
-          <div class="container">
-            <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img-120x40.png">
-            
-            <h2>The best courses anytime, anywhere.</h2>
-          </div>
-          <!-- <div class="container">
+
+  </header>
+
+  {% block body %}
+  {% endblock %}
+
+  <footer>
+
+
+
+    <div class="footer-info">
+
+      <div class="container">
+        <img
+          src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo@2x-free-img-120x40.png">
+
+        <h2>The best courses anytime, anywhere.</h2>
+      </div>
+      <!-- <div class="container">
         
             <h5>For Her</h5>
             <ul>
@@ -88,39 +96,40 @@
               <li>Men Jackets</li>
             </ul>
           </div> -->
-          <div class="container">
-        
-            <h5>Subscribe</h5>
-            
-            <form>
-              <input type="text" placeholder="Your email address..." class="name">
-              <input type="submit" class="submit" value="Subscribe">
-            </form>
-          </div>
-          
-        </div>
-          <!--- footer-info ---->
-        
-        <div class="footer-copyright">
-          
-          <div class="copyright">
-            Copyright © 2023 courseOne. Developed by: Siddharth Verma.
-          </div>
-          
-          <div class="social">
-            <i class="fa fa-facebook-f"></i>
-            <i class="fa fa-youtube-play"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-google"></i>
-          </div>
-          
-        </div>
-        <!--- footer-copyright ---->
-        
-      </footer>
-<!-- javascript -->
-<script type="text/javascript" src="{% static '/js/main.js' %}"></script>
+      <div class="container">
+
+        <h5>Subscribe</h5>
+
+        <form>
+          <input type="text" placeholder="Your email address..." class="name">
+          <input type="submit" class="submit" value="Subscribe">
+        </form>
+      </div>
+
+    </div>
+    <!--- footer-info ---->
+
+    <div class="footer-copyright">
+
+      <div class="copyright">
+        Copyright © 2023 courseOne. Developed by: Siddharth Verma.
+      </div>
+
+      <div class="social">
+        <i class="fa fa-facebook-f"></i>
+        <i class="fa fa-youtube-play"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-google"></i>
+      </div>
+
+    </div>
+    <!--- footer-copyright ---->
+
+  </footer>
+  <!-- javascript -->
+  <script type="text/javascript" src="{% static '/js/main.js' %}"></script>
 
 </body>
+
 </html>

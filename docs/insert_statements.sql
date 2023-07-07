@@ -123,6 +123,7 @@ INSERT INTO `courseone`.`courses_image`
 `url`,
 `content_id`)
 VALUES
+('Image', @url1, 1),
 ('Databases for Beginners Image', @url2, 2),
 ('Networking Essentials Image', @url3, 3),
 ('Python Programming Image', @url4, 4),
