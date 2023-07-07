@@ -8,6 +8,9 @@ CourseOne is a web application that provides an extensive REST API for a Courser
 - Single Course Details: View detailed information about a specific course, including videos, images, content, and lectures.
 - Filter Courses: Apply filters based on type, price, popularity, and topics to narrow down the course list.
 
+## Project Schema
+![Image Alt Text](./docs/courseOne_Schema.png)
+
 ## Setup Instructions
 
 Follow these steps to set up and run the CourseOne project on your local machine:
