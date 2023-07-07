@@ -27,12 +27,12 @@
   
       <nav>
         
-        <img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img.png" class="logo">
+        <a href="{% url 'homepage' %}"><img src="https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/logo1-free-img.png" class="logo"></a>
         
         <ul class="menu-bar-side">
           <li><a href="{% url 'course-list' %}">everything</a></li>
-          <li>Premium</li>
-          <li>Free</li>            
+          <li><a href="{% url 'course-list' %}?type=Premium">Premium</a></li>
+          <li><a href="{% url 'course-list' %}?type=Free">Free</a></li>            
         </ul>
         
          <ul class="menu-bar">

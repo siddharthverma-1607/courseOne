@@ -2,9 +2,26 @@
 
 {% block title %}CourseOne PLP{% endblock %}
 
-{% block body %}
-<h1>Course List</h1>
 
+{% block header %}
+
+<div class="content">
+       
+    <h2 class="heading">
+      Courses Listing Page!
+    </h2>
+    
+    <h4>
+      Check out below! ⬇️
+    </h4>
+    
+  </div>
+  {% endblock %}
+
+
+{% block body %}
+<center><h1>Course List</h1></center>
+<br>
 <!-- Filter bar -->
 <form action="/courses/" method="get">
   <!-- Type filter field -->
@@ -44,9 +61,9 @@
   <!-- Submit button -->
   <button type="submit">Apply Filters</button>
 </form>
-
+<br>
 {% for course in courses %}
-  <div>
+  <div id="plp">
     <h2><a href="{% url 'course-detail' course.pk %}">{{ course.title }}</a></h2>
     <p>{{ course.description }}</p>
     <p>Course Type: {{ course.course_type }}</p>
